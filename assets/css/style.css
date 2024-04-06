@@ -1,0 +1,32 @@
+/* soft reset de style */
+*{
+    margin: 0;
+    padding: 0;
+}
+/* Header */
+nav{/* cambiar el color del nav */
+    background-color: #373A3C;
+}
+
+
+/* Newsletter */
+
+
+/* Footer */
+footer{
+    background-color: #373A3C;
+    height: 110px;
+}
+footer p{
+    padding: 1.5rem;
+    font-size: 37px;
+}
+
+/* Generales */
+.f-lobster{ /* Cambiar la fuente a lobster */
+    font-family: 'Lobster', sans-serif;
+}
+.max-width-1000{
+    max-width: 1000px;
+    margin: auto;
+}
