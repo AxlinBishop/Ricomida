@@ -2,15 +2,74 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Cabin';
 }
 /* Header */
 nav{/* cambiar el color del nav */
     background-color: #373A3C;
 }
 
+/* Principal */
+#principal{
+    padding-top: 6rem;
+}
+
+.imagen img{ /* hacemos que la imagen ocupe el espacio asignado */
+    margin: auto;
+    width: calc(100% - 2rem);
+}
+.titulo{
+    max-width: 350px;
+}
+.botones button{
+    background-color: #FFFFFF;
+    margin: 0.5rem 1rem 0.5rem 0;
+    padding: 3px 5px 3px 5px;
+    border: solid 1px;
+    border-color: #DDDDDD;
+
+}
+
+
+/* Carrusel */
+.carousel img{
+    width: 24%; /* asignamos un width de 24 % para que quede espacio para el padding */
+    padding: 1rem;
+}
+
+/* Receta */
+#receta{
+    padding: 4rem 0 4rem 0;
+}
+
+/* Recetas relacionadas */
+#recetasRelacionadas{
+    padding: 1rem 0 5rem 0;
+}
+#recetasRelacionadas img{
+    width: calc(18rem - 2px);
+}
+.row>*{
+    padding: 0;
+}
+.card{
+    margin: auto;
+    height: 23rem;
+}
 
 /* Newsletter */
-
+#Newsletter{
+    background-color: #DC3545;
+    color: white;
+    text-align: center;
+    padding: 5rem;
+}
+.subscribe{
+    background-color: rgba(0, 0, 0, 0);
+    border: solid 1px;
+    border-color: #DDDDDD;
+    color: #FFFFFF;
+}
 
 /* Footer */
 footer{
@@ -23,10 +82,51 @@ footer p{
 }
 
 /* Generales */
+hr{
+    border: 2px solid;
+}
+
+/* Fonts en general */
 .f-lobster{ /* Cambiar la fuente a lobster */
     font-family: 'Lobster', sans-serif;
 }
+/* Font sizes */
+.fs40{
+    font-size: 40px;
+}
+.fs30{
+    font-size: 30px;
+}
+.fs23{
+    font-size: 23px;
+}
+.fs20{
+    font-size: 20px;
+}
+.fs16{
+    font-size: 16px;
+}
+
+/* Font weights */
+.fb{
+    font-weight: 700;
+}
+/* Para que el máximo width que abarque el contenido en los monitores más grandes sea de 1000px */
 .max-width-1000{
     max-width: 1000px;
-    margin: auto;
+    margin: auto; /* El contenido quede centrado */
+    padding: 0 4rem 0 4rem;
+}
+
+/* Medias Query */
+@media (max-width: 768px){ /* Media query en caso de que la pantalla sea menor a 768px */
+    .centrar{
+        justify-content: center; /* justificar el contenido en medio */
+    }
+    .texto-centrar{
+        text-align: center;
+    }
+    #principal img{
+        margin: 0 1rem 0 1rem; /* La imagen principal no esté tan a la izquierda */
+    }
 }

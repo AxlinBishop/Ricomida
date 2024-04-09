@@ -6,6 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Importaciones, links, fonts -->
+    <!-- Font Cabin -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+
     <!-- Font Lobster -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,14 +28,16 @@
     <!-- Header -->
     <header>
         <!-- NAV de bootstrap -->
-        <nav class="navbar navbar-expand-lg fixed-top">
-            <div class="container">
-                <a class="navbar-brand text-light" href="#"><h1 class="f-lobster">Ricomida</h1></a>
+        <nav class="navbar navbar-expand-lg fixed-top"> <!-- se mantenga pegado a top -->
+            <div class="container"> <!-- Da el padding al contenido del nav -->
+                <a class="navbar-brand text-light" href="#"> <!-- El texto en blanco -->
+                    <h1 class="f-lobster">Ricomida</h1> <!-- colocamos ricomida con font lobster -->
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="collapse navbar-collapse" id="navbarNav"> 
                     <ul class="navbar-nav ms-auto"> <!-- ms-auto alinea a la derecha los links -->
                         <li class="nav-item">
                             <a class="nav-link active text-light" aria-current="page" href="#">Inicio</a>
@@ -50,102 +58,187 @@
     </header>
 
     <div class="max-width-1000"><!-- el max width para todo el cuerpo de la página -->
-        <section>
-            <article>
-    
-            </article>
-            <article id="carousel">
-    
+        <section id="principal">
+            <hr class="d-md-block d-lg-none"> <!-- que la barra desaparezca en pantallas más pequeñas -->
+            <!-- el hr se muestra en pantallas más pequeñas y desaparece de lg en adelante -->
+            <div class="row">
+                <div class=" imagen col-md-6 col-12">
+                    <img src="assets/img/principal.jpg" alt="Pizza al estilo Chicago con espinacas y champiñones">
+                </div>
+                <div class="col-md-6 col-12 pt-5">
+                    <div class="centrar d-flex">
+                        <h2 class="texto-centrar titulo fs40 fb">PIZZA AL ESTILO CHICAGO CON ESPINACAS Y CHAMPIÑONES</h2>
+                    </div>
+                    <hr>
+                    <p class="texto-centrar m-0 fs20">110 MIN / 6 A 8 PORCIONES</p>
+                    <div class="botones d-flex centrar">
+                        <button type="button" id="enviarCorreo" title="Presiona para enviar a tu correo">Enviar por correo</button> <!-- agregamos el texto del tooltip -->
+                        <button type="button" id="btnFavoritos" title="Agrega esta receta a tus favoritos">Añadir a favoritos</button>
+                    </div>
+                </div>
+            </div>
+            <article id="carousel" class="d-none d-md-block py-5"><!-- no aparece en pantallas pequeñas -->
+                <div id="carouselExample" class="carousel slide">
+                    <div class="carousel-inner">
+                        <div class="row">
+                            <div class="carousel-item active"> <!-- Dividimos en dos divs y que cada una de las imágenes use 3 col de la grilla -->
+                                <img src="assets/img/slider-1.png" class="col-3">
+                                <img src="assets/img/slider-2.png" class="col-3">
+                                <img src="assets/img/slider-3.png" class="col-3">
+                                <img src="assets/img/slider-4.png" class="col-3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/slider-5.png" class="col-3 ">
+                                <img src="assets/img/slider-6.png" class="col-3">
+                                <img src="assets/img/slider-7.png" class="col-3">
+                                <img src="assets/img/slider-8.png" class="col-3">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Botones del carousel -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
             </article>
         </section>
+        <hr class="d-none d-md-block"><!-- no aparece en pantallas menores a md -->
         <section id="receta">
             <div class="row"><!-- se organiza en filas, para luego usar columnas -->
-                <div id="ingredientes" class="col-lg-6">
-                    <p>INGREDIENTES Masa 20 gr de levadura seca instantánea 1 cucharadita de azúcar 500 ml agua
-                        tibia 100 ml aceite vegetal 4 cucharadas de aceite de oliva 65 gr harina de maíz fina
-                        (chuchoca) 2 cucharaditas de sal 625 gr harina Salsa 5 cucharadas de aceite de oliva ½
-                        cebolla picada en cubos finos 2 cucharaditas de sal 3 cucharadas de Orégano Gourmet 1 ½
-                        cucharadas de Albahaca Gourmet 2 tarro de tomates en cubos al natural 2 cucharaditas de
-                        azúcar Relleno ½ cebolla, en cubos 500 gr hojas de espinacas picadas 400 gr de champiñones,
-                        laminados 300 gr de queso mozarella. 4 cucharadas queso parmesano</p>
+                <div id="ingredientesReceta" class="col-md-6 col-12">
+                    <h3 id="ingredientes">INGREDIENTES</h3>
+                    <p class="fs20">Masa <br><br>
+                        20 gr de levadura seca instantánea <br>
+                        1 cucharadita de azúcar <br>
+                        500 ml agua tibia <br>
+                        100 ml aceite vegetal <br>
+                        4 cucharadas de aceite de oliva <br>
+                        65 gr harina de maíz fina (chuchoca) <br>
+                        2 cucharaditas de sal <br>
+                        625 gr harina <br><br>
+
+                        Salsa <br><br>
+                        5 cucharadas de aceite de oliva <br>
+                        ½ cebolla picada en cubos finos <br>
+                        2 cucharaditas de sal <br>
+                        3 cucharadas de Orégano Gourmet <br>
+                        1 ½ cucharadas de Albahaca Gourmet <br>
+                        2 tarro de tomates en cubos al natural <br>
+                        2 cucharaditas de azúcar <br><br>
+                        Relleno <br><br>
+                        ½ cebolla, en cubos <br>
+                        500 gr hojas de espinacas picadas <br>
+                        400 gr de champiñones, laminados <br>
+                        300 gr de queso mozarella. <br>
+                        4 cucharadas queso parmesano</p>
                 </div>
-                <div id="preparacion" class="col-lg-6">
-                    <p>PREPARACIÓN 1. Para la masa, disolver la levadura y el azúcar en agua tibia en un bol grande.
+                <div id="preparacionReceta" class="col-md-6 col-12">
+                    <h3 id="preparacion">PREPARACIÓN</h3>
+                    <p class="fs20">1. Para la masa, disolver la levadura y el azúcar en agua tibia en un bol grande.
                         Dejar reposar 2 minutos. Agregar el aceite, la harina de maíz, sal y 400gr de harina. Mezclar
                         bien. Amasar y agregar el resto de harina, la cantidad necesaria para tener una masa blanda.
                         Poner en el mesón y amasar por 5 minutos o hasta tener una masa lisa y elástica (agregar harina
                         en el mesón a medida que se va amasando para que la masa no se pegue) . Poner la masa en un bol
-                        aceitado, tapar con un paño de cocina limpio y dejar reposar hasta que la masa duplique su volumen
-                        (leudar). Golpear la masa para que baje y luego dejar leudar por 40 minutos adicionales. 2.
-                        Mientras tanto preparar la salsa: Calentar 4 cucharadas de aceite en una olla a fuego medio.
+                        aceitado, tapar con un paño de cocina limpio y dejar reposar hasta que la masa duplique su
+                        volumen
+                        (leudar). Golpear la masa para que baje y luego dejar leudar por 40 minutos adicionales.
+                        <br><br>
+                        2. Mientras tanto preparar la salsa: Calentar 4 cucharadas de aceite en una olla a fuego medio.
                         Agregar la cebolla, Orégano Gourmet, Albahaca Gourmet, sal y cocinar hasta que la cebolla esté
                         dorada. Agregar el ajo y cocinar por 30 segundos. Agregar los tomates junto al jugo del tarro,
-                        a la mezcla de cebolla. Agregar el azúcar y cocinar hasta que la mezcla se haya reducido y espesado,
-                        como 30 minutos. Sazonar con sal y pimienta a gusto. Reservar. 3. Relleno: Cocinar las chalotas
-                        en el aceite de oliva hasta que estén transparentes. Agregar los champiñones y las espinacas,
-                        cocinar hasta que estén cocidos y se haya evaporado todo el líquido que hayan votado los vegetales.
-                        Reservar. 4. Calentar el horno a 220C. 5. Una vez que la masa haya reposado, dividirla en dos bolas.
-                        Estirar cada masa para cubrir dos moldes (desmontables) de 26 cm, hacer un borde de 5 cm con la
-                        masa.
-                        Dividir el relleno entre las dos pizza, tapar con el queso mozarella, luego terminar con la salsa
-                        de tomates y finalmente espolvorear el queso rallado. 6. Hornear por 35 a 40 minutos o hasta que
-                        el relleno esté caliente y la base esté esponjosa y dorada. Esperar unos minutos antes de desmoldar.
+                        a la mezcla de cebolla. Agregar el azúcar y cocinar hasta que la mezcla se haya reducido y
+                        espesado,
+                        como 30 minutos. Sazonar con sal y pimienta a gusto. <br>
+                        Reservar. <br><br>
+                        3. Relleno: Cocinar las chalotas en el aceite de oliva hasta que estén transparentes. Agregar
+                        los
+                        champiñones y las espinacas, cocinar hasta que estén cocidos y se haya evaporado todo el líquido
+                        que hayan
+                        votado los vegetales. <br>
+                        Reservar. <br><br>
+                        4. Calentar el horno a 220C. <br><br>
+                        5. Una vez que la masa haya reposado, dividirla en dos bolas. Estirar cada masa para cubrir dos
+                        moldes
+                        (desmontables) de 26 cm, hacer un borde de 5 cm con la masa.
+                        Dividir el relleno entre las dos pizza, tapar con el queso mozarella, luego terminar con la
+                        salsa
+                        de tomates y finalmente espolvorear el queso rallado. <br><br>
+                        6. Hornear por 35 a 40 minutos o hasta que el relleno esté caliente y la base esté esponjosa y
+                        dorada.
+                        Esperar unos minutos antes de desmoldar.
                     </p>
                 </div>
             </div>
         </section>
         <!-- Recetas relacionadas -->
+        <hr>
         <section id="recetasRelacionadas">
+            <h2 class="text-center pb-4 fs40 fb">RECETAS RELACIONADAS</h2>
             <div class="row"><!-- para acomodar luego las cards en columnas -->
-                <div class="card" style="width: 18rem;">
-                    <img src="assets/img/recipe-card-1.png" class="card-img-top" alt="Panqueques con manjar y crema">
-                    <div class="card-body">
-                        <h5 class="card-title">PANQUEQUES CON MANJAR Y CREMA</h5>
-                        <p class="card-text">Mus enim elementum dignissim class eleifend justo, ut nunc magnis est vulputate 
-                            nostra, blandit erat luctus faucibus orci.
-                        </p>
+                <div class="trajetas col-lg-4 col-12 py-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="assets/img/recipe-card-1.png" class="card-img-top"
+                            alt="Panqueques con manjar y crema">
+                        <div class="card-body">
+                            <h5 class="card-title fs23 fb">PANQUEQUES CON MANJAR Y CREMA</h5>
+                            <p class="card-text">Mus enim elementum dignissim class eleifend justo, ut nunc magnis est
+                                vulputate
+                                nostra, blandit erat luctus faucibus orci.
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="assets/img/recipe-card-2.png" class="card-img-top" alt="Tiramisú">
-                    <div class="card-body">
-                        <h5 class="card-title">TIRAMISÚ</h5>
-                        <p class="card-text">Congue fermentum dignissim rhoncus elementum ac nisi, proin phasellus 
-                            lacinia sed faucibus mauris, taciti scelerisque nulla ornare consequat.
-                        </p>
+                <div class="trajetas col-lg-4 col-12 py-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="assets/img/recipe-card-2.png" class="card-img-top" alt="Tiramisú">
+                        <div class="card-body">
+                            <h5 class="card-title fs23 fb">TIRAMISÚ</h5>
+                            <p class="card-text">Congue fermentum dignissim rhoncus elementum ac nisi, proin phasellus
+                                lacinia sed faucibus mauris, taciti scelerisque nulla ornare consequat.
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="assets/img/recipe-card-3.png" class="card-img-top" alt="Plateada">
-                    <div class="card-body">
-                        <h5 class="card-title">PLATEADA</h5>
-                        <p class="card-text">Cubilia elementum posuere arcu rhoncus egestas lectus, diam aliquam laoreet 
-                            ac eleifend risus, urna auctor inceptos mattis dapibus.
-                        </p>
+                <div class="trajetas col-lg-4 col-12 py-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="assets/img/recipe-card-3.png" class="card-img-top" alt="Plateada">
+                        <div class="card-body">
+                            <h5 class="card-title fs23 fb">PLATEADA</h5>
+                            <p class="card-text">Cubilia elementum posuere arcu rhoncus egestas lectus, diam aliquam
+                                laoreet
+                                ac eleifend risus, urna auctor inceptos mattis dapibus.
+                            </p>
+                        </div>
                     </div>
                 </div>
-    
+
             </div>
         </section>
-        <!-- Newsletter -->
-        <section id="Newsletter">
-            <h2>SUSCRÍBETE EN NUESTRO NEWSLETTER</h2>
-            <P>y obtén las mejores recetas que tenemos en <span class="f-lobster">Ricomida</span></P>
-            <button type="submit">Empezar
-            </button>
-        </section>
     </div>
-
+    <!-- Newsletter -->
+    <section id="Newsletter">
+        <h2 class="fs40 fb">SUSCRÍBETE EN NUESTRO NEWSLETTER</h2>
+        <P class="fs30">y obtén las mejores recetas que tenemos en <span class="f-lobster">Ricomida</span></P> <!-- usamos span para modificar solo la palabra -->
+        <button class="subscribe my-5 px-5" type="submit">Empezar
+        </button>
+    </section>
     <!-- footer -->
     <footer>
         <p class="f-lobster text-light text-center">Ricomida</p>
     </footer>
 
 
+    <!-- JQuery --> <!-- Colocar JQuery antes de mi JS o causa problemas -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- Mi JS -->
     <script src="assets/js/script.js"></script>
-    <!-- JQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
